@@ -1,0 +1,28 @@
+import java.util.Scanner; 
+import java.util.ArrayList;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the amount of students in your classroom.");
+		
+		int studentnum = input.nextInt();
+		
+		ArrayList<String>name = new ArrayList<String>();
+		//creates the arraylist called name
+		System.out.println("Enter Student Name");
+		
+		int i;
+		for(i=0; i<=studentnum;i++) {
+			//creates a for loop that loops "studentnum" amount of times
+			String studentname = input.nextLine();
+			name.add(studentname);
+			System.out.println("Current list of Students: " + name);
+		}
+		name.remove(0);
+		//this is needed since the array list starts at 0 instead of 1
+		System.out.println("List of Students: " + name);
+	}
+}
