@@ -1,0 +1,44 @@
+import java.util.*;
+public class Challenge {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the number of students you would like to add to the roster: ");
+		
+		int studentNum = input.nextInt();
+		
+		System.out.println("Enter the studetns' names.");
+		
+		//creates a linkedlist called roster
+		LinkedList <String> roster = new LinkedList<String>();
+		int i;
+		//creates for loop to allow any number of 
+		for (i=1; i<=studentNum; i++) {
+			String studentName = input.next();
+			roster.add("{"+i+"}" + " " + studentName);
+			System.out.println("Current Roster: \n" + roster);
+		}
+		
+		System.out.print("\n Would you like to remove students from the roster?" +
+						"\n Type in 'Yes' or 'No'.");
+		String yes = "Yes";
+		String no = "No";
+		String remove = input.next();
+		
+		//creates an if-else-if statement based on the user input
+		if (remove.equals(yes)) {
+			System.out.print("Enter the Student ID number (i.e 1 or 2) to remove that student.");	
+			System.out.println(roster);
+			int studentID = input.nextInt();
+			roster.remove(studentID-1);	
+			System.out.println("\n The current roster is: \n" + roster);
+		}
+		else if (remove.equals(no)) {
+			return; 
+		}
+	}
+
+}
