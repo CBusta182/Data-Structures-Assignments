@@ -1,0 +1,14 @@
+package Challenge;
+import java.lang.Math;
+
+public class Main {
+	public static void main (String args[]) {
+	double [] numbers = {10, 20, 30, 40, 50, 60 ,70, 80, 90, 100};
+	
+	int i;
+	for(i=0; i<=9; i++) {
+	System.out.print(Math.log(numbers[i])/Math.log(5));
+	System.out.print("\n");
+	}
+	}
+}
