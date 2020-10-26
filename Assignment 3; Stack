@@ -1,0 +1,50 @@
+import java.util.*;
+public class Challenge {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Please enter the amount you wish to contribute to your 401k each month.");
+		double contribution = input.nextDouble();
+		double yearlycontribution = 12*contribution;
+		double interest = 0.05;
+		double monthlyinterest = interest*contribution; 
+			
+		//creates a stack called values
+			Stack<Double> values = new Stack<Double>();
+		
+		//pushes the variables defined/calculated above into the stack
+		values.push(contribution);	
+		values.push(yearlycontribution);
+		values.push(monthlyinterest);
+		
+		System.out.println("The amount you want to contribute each month, each year, and interested earned per month is: \n"
+						  + values + " respectively");
+		
+		System.out.println("Your yearly earnings over 30 years from the most recent year back to the first year: ");
+		
+		//renaming variables for easier formula
+		double P = contribution; 
+		double r = interest;
+		double PMT = P; 
+		double n = 12; 
+		
+		//creates a stack 
+		Stack<Double> earning30 = new Stack<Double>();
+		int t;
+		
+		//creates a for loop for 30 years and puts the data into a stack 
+		for (t=30; t>=1; t--) { 
+			double A = r/n; 
+			double B = n*t;
+			double earnings = (P*Math.pow((1+A), B))+(PMT*((Math.pow(1+A, B)-1)/B));
+			
+			earning30.push(earnings);
+		}
+		
+		System.out.println(earning30);
+	}
+
+}
