@@ -1,0 +1,33 @@
+import java.util.*;
+public class Challenge {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the amount of Emergency Response Vehicles that responded to the scene.");
+		int vehicleNum = input.nextInt();
+		
+		System.out.println("Enter Vehicle ID numbers in the order they came in.");
+		System.out.println("1. Fire Truck \n2. Ambulance \n3. Police Car");
+		
+		//creates a queue called 'queue'
+		Queue<String> queue = new LinkedList<String>();
+		int i;
+		for (i=1; i<=vehicleNum; i++) {
+			int response = input.nextInt();
+			if(response==1) {
+				queue.add("Fire Truck");
+			}else if (response == 2) {
+				queue.add("Ambulance");
+			}
+			else if(response == 3) {
+				queue.add("Police CaSSr");
+			}
+		System.out.print("Current log of Emergency Response Vehicles: \n"
+				+ queue + "\n");
+		}
+		
+		System.out.print("List of vehicles that responded to the scene. \n"
+				+ queue);
+	}
+}
