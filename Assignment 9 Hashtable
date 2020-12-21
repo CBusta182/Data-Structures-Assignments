@@ -1,0 +1,59 @@
+import java.util.Hashtable;
+import java.util.Scanner;
+
+public class Boat {
+
+	public static Hashtable<String, String> boats = new Hashtable<String, String>();
+	public static Scanner user = new Scanner(System.in);
+	public static String yes = "Yes";
+	public static String no = "No";
+	
+	public static void main(String[] args) {
+		
+		
+		
+		while(true) {
+		System.out.print("Would you like to add a boat?" + "\n type in 'Yes' or 'No'. "); 
+		
+		String add = user.next();
+		
+		if(add.equals(yes)) {
+			System.out.print(" \n Separate boat name and ID with a space.");
+			addBoat();
+			System.out.print("Current lists of boats: \n" + boats);
+			
+			search();
+		} 
+		if(add.equals(no)) {
+			break;
+			}
+		}
+
+	}
+	
+	public static void addBoat() {
+		
+		System.out.println(" \nEnter the boat name and ID. \n");
+		
+		String boatName = user.next();
+		String boatID = user.next();
+		
+		boats.put(boatName, boatID);
+		
+	}
+	
+	public static void search() {
+		System.out.print("Would you like to search for a boat?" + "\n type in 'Yes' or 'No'. ");
+		String search = user.next();
+		if(search.equals(yes)) {
+			System.out.print("Enter the boat Name or ID to look for a boat.");
+			
+			String boatLook = user.next();
+			
+			System.out.print("Does the Marina have the " + boatLook + "?: " + boats.containsKey(boatLook));
+			
+			System.out.print("\n");
+		}
+	}
+	
+}
